@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/travel-plan/static/css/main.651e751f.chunk.css",
+    "main.js": "/travel-plan/static/js/main.a6a26f29.chunk.js",
+    "main.js.map": "/travel-plan/static/js/main.a6a26f29.chunk.js.map",
+    "runtime~main.js": "/travel-plan/static/js/runtime~main.315ca04a.js",
+    "runtime~main.js.map": "/travel-plan/static/js/runtime~main.315ca04a.js.map",
+    "static/js/2.4544c903.chunk.js": "/travel-plan/static/js/2.4544c903.chunk.js",
+    "static/js/2.4544c903.chunk.js.map": "/travel-plan/static/js/2.4544c903.chunk.js.map",
+    "index.html": "/travel-plan/index.html",
+    "precache-manifest.ed54a642c8d9a86526e14d5b7d520f33.js": "/travel-plan/precache-manifest.ed54a642c8d9a86526e14d5b7d520f33.js",
+    "service-worker.js": "/travel-plan/service-worker.js",
+    "static/css/main.651e751f.chunk.css.map": "/travel-plan/static/css/main.651e751f.chunk.css.map"
+  }
+}
