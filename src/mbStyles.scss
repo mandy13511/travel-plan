@@ -1,0 +1,60 @@
+@media (max-width: 460px) {
+  .panel{
+    flex-direction: column;
+    margin: 2rem;
+    padding: 0.5rem;
+  }
+
+  .text-l{
+    font-size: 1rem;
+  }
+
+  .text-m{
+    font-size: 0.8rem;
+  }
+  
+  .img-l{
+    height: 7rem;
+  }
+
+  .img-s{
+    display: none;
+  }
+
+  .schedule{
+    margin-left: 0.4rem;
+  }
+
+  .schedule-title {
+    margin-right: 0.6rem;
+    margin-left: -0.5rem;
+    font-size: 0.8rem;
+    line-height: 1rem;
+  }
+
+  .dot{
+    margin-right: 0.5rem;
+    width:0.5rem;
+    height:0.5rem;
+  }
+
+  .schedule-content{
+    margin-left: 1rem;
+    margin-top: 0.8rem;
+    font-size: 0.6rem;
+  }
+
+  /* $navbar */
+  .navbar{
+    text-align: left;
+  }
+  
+  .navbar-l{
+    display:none;
+  }
+
+  .navbar-s{
+    display: inline-block;
+  }
+}
+

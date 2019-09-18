@@ -1,0 +1,299 @@
+$mainFont : "Arial";
+$shadow-color: #bbbbbb;
+
+@media (max-width: 320px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media (max-width: 720px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+body{
+  margin: 0;
+}
+
+.side{
+  flex:2;
+  height: 100vh;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.content{
+  flex:10;
+  height: 100vh;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+
+}
+
+.header{
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+/* $pane; */
+.row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+}
+
+.container{
+  display: flex;
+  font-family: $mainFont;
+  letter-spacing: 0.1rem;
+}
+
+.panel{
+  display: flex;
+  flex: 1;
+  height: auto;
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 0 1.2rem $shadow-color;
+	-moz-box-shadow: 0 0 1.2rem $shadow-color;
+	box-shadow: 0 0 1.2rem $shadow-color;
+}
+
+.panel-container{
+  flex:1;
+  padding: 0.5rem;
+  margin: 0.1rem;
+  word-break:     break-word;
+  -webkit-hyphens: none;
+  -moz-hyphens:    none;
+  hyphens: none;
+}
+
+.panel-note-container{
+  padding: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  border-radius: 0.5rem;
+  background-color: #DCDCDC
+}
+
+.panel-note-list{
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.panel-note-list-title{
+  flex: 1;
+  font-weight:bold;
+}
+
+.panel-note-list-text{
+  flex: 9;
+  margin-left: 1rem;
+}
+
+.text-l{
+  font-size: 1.2rem;
+}
+
+.text-m{
+  font-size: 1rem;
+}
+
+.text-s{
+  font-size: 0.8rem;
+}
+
+.img{
+  max-width:100%;
+}
+
+.img-l{
+  width: 100%;
+  height: 20rem;
+}
+
+.img-s{
+  width:25%;
+  height: 5rem;
+}
+
+/* $schedule */
+.schedule{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  border-left: solid 0.2rem gray;
+}
+
+.schedule-day{
+  margin-bottom: 3rem;
+  padding: 0.2rem;
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
+
+.schedule-header{
+  display: flex;
+  flex-direction: row;
+  margin-left: -0.75rem;
+}
+
+.schedule-title{
+  display: flex;
+  align-items: center;
+  color: gray;
+  font-size: 1rem;
+  cursor: pointer;
+  &:hover{
+    font-weight: bold;
+  }
+}
+
+.dot{
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-right: 1rem;
+  content:"\A";
+  width:1rem;
+  height:1rem;
+  border-radius:50%;
+  border: solid gray;
+  background: white;
+}
+
+.schedule-content{
+  margin-bottom: 3rem;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+/* $navbar */
+.navbar{
+  width : 100vw;
+  height: 3rem;
+  background-color: black;
+  line-height: 3rem;
+  text-align: right;
+}
+
+.navbar-btn{
+  margin-right: 2rem;
+  padding: 0.4rem;
+  color: white;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  &:hover{
+    font-weight: bold;
+  }
+}
+
+.navbar-s{
+  display:none;
+}
+
+/* $modal */
+.modal {
+  //display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 10rem; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius: 0.5rem;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+  &:hover, &:focus{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.modal-header {
+  padding: 0.5rem 1rem;
+  background-color:black;
+  color: white;
+  border-radius: 0.5rem 0.5rem 0 0rem;
+}
+
+.modal-body {
+  padding: 0.5rem 1rem;
+}
+
+.modal-footer {
+  padding: 0.5rem 1rem;
+  background-color:black;
+  color: white;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+table{
+  width: 100%;
+}
+
+table,tr { 
+  border-collapse: collapse;
+  border: solid 0.1px gray;
+}
+
+th{
+  color:white;
+  background-color: black;
+}
