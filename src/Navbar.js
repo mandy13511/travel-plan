@@ -8,11 +8,19 @@ import "./mbStyles.scss";
 export default class Navbar extends Component {
   constructor(props) {
     super(props);
-    this.state = { width: props.width };
+    this.state = { width: props.width, showModal: false };
   }
 
   componentWillMount() {
     this.setState({ width: window.innerWidth });
+  }
+
+  showModal = () => {
+    this.setState({ showModal: true });
+  }
+
+  hideModal = () => {
+    this.setState({ showModal: false });
   }
 
   switchView() {
@@ -29,7 +37,7 @@ export default class Navbar extends Component {
       /* desktop view */
       return (
         <div className="navbar">
-          <span className="navbar-btn navbar-l">Add new place</span>
+          <span className="navbar-btn navbar-l" onClick={this.showModal}>Add new place</span>
           <span className="navbar-btn navbar-l">Save as PDF</span>
         </div>
       );
@@ -40,7 +48,7 @@ export default class Navbar extends Component {
     return (
       <div>
         {this.switchView()}
-        <EditModal travel={this.props.travel} />
+        <EditModal travel={this.props.travel} show={this.state.showModal} handleClose={this.hideModal}/>
       </div>
     );
   }

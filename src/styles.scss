@@ -28,6 +28,10 @@ body{
   margin: 0;
 }
 
+a{
+  color: gray;
+}
+
 .side{
   flex:2;
   height: 100vh;
@@ -244,7 +248,7 @@ body{
 
 /* Add Animation */
 @-webkit-keyframes animatetop {
-  from {top:-300px; opacity:0} 
+  from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
 
@@ -288,7 +292,7 @@ table{
   width: 100%;
 }
 
-table,tr { 
+table,tr {
   border-collapse: collapse;
   border: solid 0.1px gray;
 }

@@ -11,6 +11,7 @@ export default class EditModal extends Component {
   createTabel() {
     return (
       <table>
+        <tbody>
         {this.props.travel.map((element, index) => {
           return (
             <tr>
@@ -25,39 +26,31 @@ export default class EditModal extends Component {
               <td>123</td>
             </tr>
           );
-          /*element.map((item, itemIndex) => {
-            return (
-              <tr>
-                {itemIndex === 0 ? (
-                  <th rowspan={element.length}>Day {index + 1}</th>
-                ) : (
-                  ""
-                )}
-                <td>{itemIndex + 1 + ". " + item.place}</td>
-              </tr>
-            );
-          });*/
         })}
+        </tbody>
       </table>
     );
   }
 
-  buildTableHeader() {}
-
   render() {
+    if(this.props.show){
     return (
-      <div class="modal">
-        <div class="modal-content">
+      <div className="modal">
+        <div className="modal-content">
           <div className="modal-header">
-            <span className="close">&times;</span>
+            <span className="close" onClick={this.props.handleClose}>&times;</span>
             <span className="text-l">Add new place</span>
           </div>
           <div className="modal-body">{this.createTabel()}</div>
-          <div class="modal-footer">
+          <div className="modal-footer">
             <span className="text-m">Modal Footer</span>
           </div>
         </div>
       </div>
     );
+    }
+    else{
+      return <div></div>;
+    }
   }
 }
