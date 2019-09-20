@@ -10,6 +10,22 @@ export default class EditModal extends Component {
 
   createTabel() {
     return (
+        <div>
+        {this.props.travel.map((element, index) => {
+          return(
+            <div className = "container row block">
+              <div className = "tb-header">Day {index + 1}</div>
+              <div className = "tb-col">
+                {element.map((item, itemIndex) => {
+                  return <div className = "list">{(itemIndex+1) + ". " + item.place}</div>;
+                })}
+              </div>
+            </div>
+          );
+        })}
+        </div>
+
+      /*
       <table>
         <tbody>
         {this.props.travel.map((element, index) => {
@@ -23,12 +39,12 @@ export default class EditModal extends Component {
                   })}
                 </ol>
               </td>
-              <td>123</td>
             </tr>
           );
         })}
+          <tr><th colSpan = "2" >Add New Day</th></tr>
         </tbody>
-      </table>
+      </table>*/
     );
   }
 
@@ -41,7 +57,10 @@ export default class EditModal extends Component {
             <span className="close" onClick={this.props.handleClose}>&times;</span>
             <span className="text-l">Add new place</span>
           </div>
-          <div className="modal-body">{this.createTabel()}</div>
+          <div className="modal-body">
+            <div className = "container right"><button>Add below</button><button>Delete</button></div>
+            {this.createTabel()}
+          </div>
           <div className="modal-footer">
             <span className="text-m">Modal Footer</span>
           </div>

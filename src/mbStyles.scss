@@ -1,3 +1,14 @@
+$mainFont : "Arial";
+$bg-color: black;
+$font-color: white;
+$shadow-color: #bbbbbb;
+$hover-font-color: white;
+$hover-bg-color: black;
+
+$font-size-l: 18px;
+$font-size-m: 12px;
+$font-size-s: 10px;
+
 @media (max-width: 460px) {
   .panel{
     flex-direction: column;
@@ -12,7 +23,7 @@
   .text-m{
     font-size: 0.8rem;
   }
-  
+
   .img-l{
     height: 7rem;
   }
@@ -48,7 +59,7 @@
   .navbar{
     text-align: left;
   }
-  
+
   .navbar-l{
     display:none;
   }
@@ -57,4 +68,3 @@
     display: inline-block;
   }
 }
-
