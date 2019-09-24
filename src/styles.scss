@@ -9,6 +9,8 @@ $font-size-l: 18px;
 $font-size-m: 12px;
 $font-size-s: 10px;
 
+$navbar-height: 3rem;
+
 @media (max-width: 480px) {
   html {
     font-size: $font-size-s;
@@ -53,14 +55,14 @@ button{
 
 .side{
   flex:2;
-  height: 100vh;
+  height: 92vh;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
 }
 
 .content{
   flex:10;
-  height: 100vh;
+  height: 92vh;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
 
@@ -220,10 +222,11 @@ button{
 /* $navbar */
 .navbar{
   width : 100vw;
-  height: 3rem;
+  height: $navbar-height;
   background-color: black;
   line-height: 3rem;
   text-align: right;
+  border-top: 0;
 }
 
 .navbar-btn{
