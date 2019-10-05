@@ -116,14 +116,32 @@ const travelPlan = [
 ];
 
 export default class Plan extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { width: props.width};
+  }
+
+  componentWillMount() {
+    this.setState({ width: window.innerWidth });
+  }
+
+  showMobileView(){
+    if (this.state.width <= 460) {
+      return <div></div>;
+    }
+    else{
+      return  (<div className="side">
+                <Schedule travel={travelPlan} />
+              </div>);
+    }
+  }
+
   render() {
     return (
       <div className="container column">
         <Navbar travel={travelPlan} />
         <div className="container" styles="margin-top:2.5rem;">
-          <div className="side">
-            <Schedule travel={travelPlan} />
-          </div>
+          {this.showMobileView()}
           <div className="content">
             {travelPlan.map(element => {
               return element.map(item => {
