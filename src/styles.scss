@@ -51,6 +51,13 @@ button{
   color: $font-color;
   background-color: $bg-color;
   border-radius: 0.2rem;
+
+  &.scroll{
+    display:scroll;
+    position:fixed;
+    bottom:1rem;
+    right:1rem;
+  }
 }
 
 .side{

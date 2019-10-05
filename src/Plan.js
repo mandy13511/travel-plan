@@ -6,6 +6,8 @@ import Schedule from "./Schedule";
 import "./styles.scss";
 import "./mbStyles.scss";
 
+import { IoIosAdd } from "react-icons/io";
+
 const travelPlan = [
   [
     {
@@ -125,7 +127,7 @@ export default class Plan extends Component {
     this.setState({ width: window.innerWidth });
   }
 
-  showMobileView(){
+  showSchedule(){
     if (this.state.width <= 460) {
       return <div></div>;
     }
@@ -141,13 +143,14 @@ export default class Plan extends Component {
       <div className="container column">
         <Navbar travel={travelPlan} />
         <div className="container" styles="margin-top:2.5rem;">
-          {this.showMobileView()}
+          {this.showSchedule()}
           <div className="content">
             {travelPlan.map(element => {
               return element.map(item => {
                 return <Attractions travel={item} />;
               });
             })}
+            <button className = "scroll"><IoIosAdd/></button>
           </div>
         </div>
       </div>
