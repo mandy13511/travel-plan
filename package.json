@@ -6,6 +6,7 @@
   "dependencies": {
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
+    "react-beautiful-dnd": "^11.0.5",
     "react-dom": "^16.9.0",
     "react-icons": "^3.7.0",
     "react-scripts": "3.1.1"
@@ -17,7 +18,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-},
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -36,5 +37,5 @@
   "devDependencies": {
     "gh-pages": "^2.1.1"
   },
-"homepage": "http://mandy13511.github.io/travel-plan"
+  "homepage": "http://mandy13511.github.io/travel-plan"
 }
