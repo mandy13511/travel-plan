@@ -58,6 +58,10 @@ button{
     bottom:1rem;
     right:1rem;
   }
+
+  &:hover{
+    opacity: 0.5;
+  }
 }
 
 .side{

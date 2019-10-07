@@ -150,7 +150,7 @@ export default class Plan extends Component {
                 return <Attractions travel={item} />;
               });
             })}
-            <button className = "scroll"><IoIosAdd/></button>
+            <button className = "scroll"><IoIosAdd style={{ width: '2rem', height: '2rem' }}/></button>
           </div>
         </div>
       </div>
