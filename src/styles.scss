@@ -1,6 +1,7 @@
 $mainFont : "Arial";
-$bg-color: black;
-$font-color: white;
+$bg-color-1: #DADBE6;
+$bg-color-2: #F0F1F7;
+$font-color: #707070;
 $shadow-color: #bbbbbb;
 $hover-font-color: white;
 $hover-bg-color: black;
@@ -10,6 +11,7 @@ $font-size-m: 12px;
 $font-size-s: 10px;
 
 $navbar-height: 3rem;
+$navbar-width: 3rem;
 
 @media (max-width: 480px) {
   html {
@@ -49,7 +51,7 @@ button{
   padding: 0.3rem;
   font-size: inherit;
   color: $font-color;
-  background-color: $bg-color;
+  background-color: white;
   border-radius: 0.2rem;
 
   &.scroll{
@@ -231,23 +233,41 @@ button{
 }
 
 /* $navbar */
-.navbar{
+/*.navbar{
   width : 100vw;
   height: $navbar-height;
   background-color: black;
   line-height: 3rem;
   text-align: right;
   border-top: 0;
+}*/
+
+.navbar{
+  position: absolute;
+  width: $navbar-width;
+  height: 100vW;
+  background-color: $bg-color-1;
+  left: 0;
+  top:0;
 }
 
 .navbar-btn{
-  margin-right: 2rem;
-  padding: 0.4rem;
-  color: white;
-  border-radius: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $navbar-width;
+  height: $navbar-width;
+
+  color: $font-color;
   cursor: pointer;
-  &:hover{
-    font-weight: bold;
+
+  svg{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &.active{
+    background-color: white;
   }
 }
 
@@ -332,7 +352,7 @@ button{
   flex: 1;
   padding: 1rem;
   color: $font-color;
-  background-color: $bg-color;
+  background-color: $bg-color-1;
 }
 
 .tb-col{

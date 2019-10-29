@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { IoIosMenu } from "react-icons/io";
+import { FiCalendar, FiEdit, FiDownload } from "react-icons/fi";
 import EditModal from "./EditModal";
 
 import "./styles.scss";
@@ -27,7 +28,7 @@ export default class Navbar extends Component {
     if (this.state.width <= 460) {
       /* mobile view */
       return (
-        <div className="navbar">
+        <div>
           <span className="navbar-btn">
             <IoIosMenu />
           </span>
@@ -36,9 +37,10 @@ export default class Navbar extends Component {
     } else {
       /* desktop view */
       return (
-        <div className="navbar">
-          <span className="navbar-btn navbar-l" onClick={this.showModal}>Add new place</span>
-          <span className="navbar-btn navbar-l">Save as PDF</span>
+        <div>
+          <div className="navbar-btn" onClick={this.showModal}><FiCalendar/></div>
+          <div className="navbar-btn active"><FiEdit/></div>
+          <div className="navbar-btn"><FiDownload/></div>
         </div>
       );
     }
@@ -46,7 +48,7 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      <div>
+      <div className="navbar">
         {this.switchView()}
         <EditModal travel={this.props.travel} show={this.state.showModal} handleClose={this.hideModal}/>
       </div>

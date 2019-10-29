@@ -140,7 +140,7 @@ export default class Plan extends Component {
 
   render() {
     return (
-      <div className="container column">
+      <div className="container row">
         <Navbar travel={travelPlan} />
         <div className="container" styles="margin-top:2.5rem;">
           {this.showSchedule()}
