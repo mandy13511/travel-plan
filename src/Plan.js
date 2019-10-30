@@ -43,6 +43,7 @@ const travelPlan = [
         "https://image.kkday.com/v2/image/get/w_960%2Cc_fit%2Cq_55%2Ct_webp/s1.kkday.com/product_11875/20170425094334_R4xYO/png",
         "https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_720,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/23a5baf0-ancient-siam-5/%E5%8F%A4%E5%9F%8E76%E5%BA%9C%E4%B8%89%E9%A0%AD%E8%B1%A1%E7%A5%9E%E5%8D%9A%E7%89%A9%E9%A4%A8%E9%96%80%E7%A5%A8.webp",
         "https://www.jumpman.tw/wp-content/uploads/joomla/feature/2018-02-27-03-27-00-1165_L.jpg",
+        "http://www.emperorkey.co.th/wp-content/uploads/2019/06/erawan-museum-by-vincent-swee-goldenemperor-2.jpg",
         "http://www.emperorkey.co.th/wp-content/uploads/2019/06/erawan-museum-by-vincent-swee-goldenemperor-2.jpg"
       ]
     }
@@ -140,18 +141,16 @@ export default class Plan extends Component {
 
   render() {
     return (
-      <div className="container row">
+      <div className = "container row">
         <Navbar travel={travelPlan} />
-        <div className="container" styles="margin-top:2.5rem;">
-          {this.showSchedule()}
-          <div className="content">
-            {travelPlan.map(element => {
-              return element.map(item => {
-                return <Attractions travel={item} />;
-              });
-            })}
-            <button className = "scroll"><IoIosAdd style={{ width: '2rem', height: '2rem' }}/></button>
-          </div>
+        {this.showSchedule()}
+        <div className="content">
+          {travelPlan.map(element => {
+            return element.map(item => {
+              return <Attractions travel={item} />;
+            });
+          })}
+          <button className = "scroll"><IoIosAdd style={{ width: '2rem', height: '2rem' }}/></button>
         </div>
       </div>
     );

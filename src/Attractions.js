@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { IoMdLink, IoIosPin, IoMdCash, IoIosCall } from "react-icons/io";
+import { FiMapPin, FiPhoneCall, FiLink2, FiCreditCard } from "react-icons/fi";
 
 import "./styles.scss";
 import "./mbStyles.scss";
@@ -18,7 +19,7 @@ export default class Attractions extends Component {
           <div>
             <img className="img img-l" src={this.props.travel.img[0]} alt="" />
           </div>
-          <div>
+          <div className = "img-thumb">
             {this.props.travel.img.map((imgPath, index) => {
               if (index !== 0) {
                 return <img className="img img-s" src={imgPath} alt="" />;
@@ -32,7 +33,7 @@ export default class Attractions extends Component {
           <div className="text-s line-s">
             {this.props.travel.address !== "" && (
               <div className="panel-note-list">
-                <IoIosPin />
+                <FiMapPin />
                 <a
                   className="panel-note-list-text"
                   href={address}
@@ -44,7 +45,7 @@ export default class Attractions extends Component {
             )}
             {this.props.travel.phone !== "" && (
               <div className="panel-note-list">
-                <IoIosCall />
+                <FiPhoneCall />
                 <div className="panel-note-list-text">
                   {this.props.travel.phone}
                 </div>
@@ -52,14 +53,14 @@ export default class Attractions extends Component {
             )}
             {this.props.travel.price !== "" && (
               <div className="panel-note-list">
-                <IoMdCash />
+                <FiCreditCard />
                 <div className="panel-note-list-text">
                   {this.props.travel.price}
                 </div>
               </div>
             )}
             <div className="panel-note-list">
-              <IoMdLink />
+              <FiLink2 />
               <div>
                 {this.props.travel.link.map((i, index) => {
                   return (

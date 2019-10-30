@@ -16,7 +16,7 @@ export default class Schedule extends Component {
         {this.props.travel.map((day, index) => {
           return (
             <div>
-              <div className="schedule-day">Day {index + 1}</div>
+              {/*<div className="schedule-day">Day {index + 1}</div>*/}
               {day.map(place => {
                 return (
                   <div className="schedule-item">
