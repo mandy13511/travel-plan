@@ -40,7 +40,9 @@ body{
 
 a{
   color: $font-color-2;
-  text-decoration: none;
+  &:link{
+    text-decoration: none;
+  }
 }
 
 input{
@@ -73,7 +75,6 @@ button{
 
 .side{
   flex:2;
-  padding: 1rem 2rem;
   height: 100vh;
   overflow: scroll;
   background-color: $bg-color-2;
@@ -144,7 +145,7 @@ button{
 }
 
 .panel-note-container{
-  padding: 0.5rem;
+  padding: 1rem;
   margin-top: 1rem;
   margin-bottom: 0;
   border: solid 1px #E6DBDA;
@@ -202,6 +203,7 @@ button{
 /* $schedule */
 .schedule{
   display: flex;
+  margin: 1rem 2rem;
   flex-direction: column;
   margin-top: 2rem;
   border-left: solid 0.1rem $font-color-2;
