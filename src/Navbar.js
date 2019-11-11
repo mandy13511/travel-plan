@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { IoIosMenu } from "react-icons/io";
-import { FiCalendar, FiEdit, FiDownload } from "react-icons/fi";
+import { FiCalendar, FiEdit, FiDownload, FiSave, FiFolder } from "react-icons/fi";
 import EditModal from "./EditModal";
 
 import "./styles.scss";
@@ -29,7 +29,7 @@ export default class Navbar extends Component {
       /* mobile view */
       return (
         <div>
-          <span className="navbar-btn">
+          <span className = "navbar-btn">
             <IoIosMenu />
           </span>
         </div>
@@ -38,19 +38,36 @@ export default class Navbar extends Component {
       /* desktop view */
       return (
         <div>
-          <div className="navbar-btn" onClick={this.showModal}><FiCalendar/></div>
-          <div className="navbar-btn active"><FiEdit/></div>
-          <div className="navbar-btn"><FiDownload/></div>
+          <div className = "navbar-btn" onClick = {this.props.update}><FiFolder/></div>
+          <div className = "navbar-btn" onClick = {this.showModal}><FiCalendar/></div>
+          <div className = "navbar-btn active"><FiEdit/></div>
+          <div className = "navbar-btn" onClick = {this.saveTravelPlan}><FiSave/></div>
+          <div className = "navbar-btn"><FiDownload/></div>
         </div>
       );
     }
   }
 
+  saveTravelPlan = () => {
+    /* create an element <a> and save the text file by setting download attributes */
+    var element = document.createElement('a');
+    alert(this.props.travel);
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(this.props.travelPlan)));
+    element.setAttribute('download', "travelPlan.txt");
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+  }
+
   render() {
     return (
-      <div className="navbar">
+      <div className = "navbar">
         {this.switchView()}
-        <EditModal travel={this.props.travel} show={this.state.showModal} handleClose={this.hideModal}/>
+        <EditModal travel = {this.props.travel} show = {this.state.showModal} handleClose = {this.hideModal}/>
       </div>
     );
   }

@@ -121,36 +121,41 @@ const travelPlan = [
 export default class Plan extends Component {
   constructor(props) {
     super(props);
-    this.state = { width: props.width};
+    this.state = {travelPlan: travelPlan};
   }
 
   componentWillMount() {
     this.setState({ width: window.innerWidth });
   }
 
-  showSchedule(){
+  showSchedule() {
     if (this.state.width <= 460) {
       return <div></div>;
     }
     else{
       return  (<div className="side">
-                <Schedule travel={travelPlan} />
+                <Schedule travel={this.state.travelPlan} />
               </div>);
     }
+  }
+
+  updateData = () => {
+    alert("update");
+    //this.setState({travelPlan: pData});
   }
 
   render() {
     return (
       <div className = "container row">
-        <Navbar travel={travelPlan} />
+        <Navbar travel = {this.state.travelPlan} update = {this.updateData}/>
         {this.showSchedule()}
-        <div className="content">
-          {travelPlan.map(element => {
+        <div className = "content">
+          {this.state.travelPlan.map(element => {
             return element.map(item => {
-              return <Attractions travel={item} />;
+              return <Attractions travel = {item} />;
             });
           })}
-          <button className = "scroll"><IoIosAdd style={{ width: '2rem', height: '2rem' }}/></button>
+          <button className = "scroll"><IoIosAdd style = {{ width: '2rem', height: '2rem' }}/></button>
         </div>
       </div>
     );
