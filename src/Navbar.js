@@ -51,8 +51,8 @@ export default class Navbar extends Component {
                     style={{display: "none"}}/>
             <FiFolder/>
           </div>
-          <div className = "navbar-btn active" onClick = {() => this.props.setPage("calendar")}><FiCalendar/></div>
-          <div className = "navbar-btn" onClick = {() => this.props.setPage("edit")}><FiEdit/></div>
+          <div className = {"navbar-btn " + (this.props.page === "calendar" ? "active" : "")} onClick = {() => this.props.setPage("calendar")}><FiCalendar/></div>
+          <div className = {"navbar-btn " + (this.props.page === "edit" ? "active" : "")} onClick = {() => this.props.setPage("edit")}><FiEdit/></div>
           <div className = "navbar-btn" onClick = {this.saveTravelPlan}><FiSave/></div>
           <div className = "navbar-btn"><FiDownload/></div>
         </div>

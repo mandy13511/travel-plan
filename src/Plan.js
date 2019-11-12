@@ -133,9 +133,10 @@ export default class Plan extends Component {
       return <div></div>;
     }
     else{
-      return  (<div className="side">
-                <Schedule travel={this.state.travelPlan} />
-              </div>);
+      return(
+        <div className="side">
+          <Schedule travel={this.state.travelPlan} />
+        </div>);
     }
   }
 
@@ -151,7 +152,10 @@ export default class Plan extends Component {
   render() {
     return (
       <div className = "container row">
-        <Navbar travel = {this.state.travelPlan} update = {this.updateData} setPage = {this.setPage}/>
+        <Navbar travel = {this.state.travelPlan}
+                update = {this.updateData}
+                setPage = {this.setPage}
+                page = {this.state.page}/>
         {this.state.page === "calendar" && this.showSchedule()}
         {this.state.page === "calendar" && (
           <div className = "content">
