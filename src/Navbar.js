@@ -44,7 +44,11 @@ export default class Navbar extends Component {
       return (
         <div>
           <div className = "navbar-btn" onClick = {this.handleClick}>
-            <input id = "loadFile" type="file" onChange = {this.loadTravelPlan} style={{display: "none"}}/>
+            <input  id = "loadFile"
+                    type="file"
+                    accept = ".txt"
+                    onChange = {this.loadTravelPlan}
+                    style={{display: "none"}}/>
             <FiFolder/>
           </div>
           <div className = "navbar-btn" onClick = {this.showModal}><FiCalendar/></div>

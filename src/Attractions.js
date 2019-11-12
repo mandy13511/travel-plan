@@ -60,7 +60,7 @@ export default class Attractions extends Component {
               </div>
             )}
             <div className="panel-note-list">
-              <FiLink2 />
+              {this.props.travel.link.length > 0 && (<FiLink2 />)}
               <div>
                 {this.props.travel.link.map((i, index) => {
                   return (

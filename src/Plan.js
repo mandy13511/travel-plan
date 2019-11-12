@@ -31,7 +31,7 @@ const travelPlan = [
       phone: "",
       price: "NT412",
       link: [
-        ["blog", "https://www.marieclaire.com.tw/lifestyle/travel/42283"],
+        [ "blog", "https://www.marieclaire.com.tw/lifestyle/travel/42283"],
         [
           "kkday",
           "https://www.kkday.com/zh-tw/product/11875?cid=5193&ud1=Traditional_C_tw&ud2=dsa&gclid=CjwKCAjw_MnmBRAoEiwAPRRWWznBcS0TLOfybRJpUf4PZHJDzVzid0-skoB_XnRpQCPX0xsq3L19eBoCJVcQAvD_BwE"
