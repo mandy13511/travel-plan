@@ -121,7 +121,7 @@ const travelPlan = [
 export default class Plan extends Component {
   constructor(props) {
     super(props);
-    this.state = {travelPlan: travelPlan};
+    this.state = {travelPlan: travelPlan, page: "edit"};
   }
 
   componentWillMount() {
@@ -144,19 +144,25 @@ export default class Plan extends Component {
     this.setState({travelPlan: pData});
   }
 
+  setPage = (pPage) => {
+    this.setState({page: pPage});
+  }
+
   render() {
     return (
       <div className = "container row">
-        <Navbar travel = {this.state.travelPlan} update = {this.updateData}/>
-        {this.showSchedule()}
-        <div className = "content">
-          {this.state.travelPlan.map(element => {
-            return element.map(item => {
-              return <Attractions travel = {item} />;
-            });
-          })}
-          <button className = "scroll"><IoIosAdd style = {{ width: '2rem', height: '2rem' }}/></button>
-        </div>
+        <Navbar travel = {this.state.travelPlan} update = {this.updateData} setPage = {this.setPage}/>
+        {this.state.page === "calendar" && this.showSchedule()}
+        {this.state.page === "calendar" && (
+          <div className = "content">
+            {this.state.travelPlan.map(element => {
+              return element.map(item => {
+                return <Attractions travel = {item} />;
+              });
+            })}
+          {/*<button className = "scroll"><IoIosAdd style = {{ width: '2rem', height: '2rem' }}/></button>*/}
+          </div>
+        )}
       </div>
     );
   }

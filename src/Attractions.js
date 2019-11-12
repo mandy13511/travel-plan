@@ -16,18 +16,18 @@ export default class Attractions extends Component {
       <div id={this.props.travel.place} className="panel">
         {/* Image */}
         { (this.props.travel.img.length > 0) && (
-        <div className="panel-container row">
-          <div>
-            <img className="img img-l" src={this.props.travel.img[0]} alt="" />
+          <div className="panel-container row">
+            <div>
+              <img className="img img-l" src={this.props.travel.img[0]} alt="" />
+            </div>
+            <div className = "img-thumb">
+              {this.props.travel.img.map((imgPath, index) => {
+                if (index !== 0) {
+                  return <img className="img img-s" src={imgPath} alt="" />;
+                }
+              })}
+            </div>
           </div>
-          <div className = "img-thumb">
-            {this.props.travel.img.map((imgPath, index) => {
-              if (index !== 0) {
-                return <img className="img img-s" src={imgPath} alt="" />;
-              }
-            })}
-          </div>
-        </div>
         )}
         {/* Information */}
         <div className="panel-container">

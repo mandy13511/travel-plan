@@ -8,7 +8,22 @@ export default class Schedule extends Component {
     super(props);
   }
 
-  scrollPanel() {}
+  scrollToElement(pPlaceName) {
+    var pageElement = document.getElementById(pPlaceName);
+
+    var positionX = 0,
+        positionY = 0;
+
+
+        positionX += pageElement.offsetLeft;
+        positionY += pageElement.offsetTop;
+        pageElement = pageElement.offsetParent;
+        window.scrollTo(positionX, 1200);
+
+    pageElement.scrollIntoView();
+    alert(positionY);
+
+  }
 
   render() {
     return (
@@ -22,11 +37,9 @@ export default class Schedule extends Component {
                   <div className="schedule-item">
                     <div className=" schedule-header">
                       <div className="dot" />
-                      <div
-                        className="schedule-title"
-                        onClick={this.scrollPanel}
-                      >
-                        <a href={"#" + place.place}>{place.place}</a>
+                      <div className="schedule-title">
+                        {/*href={"#" + place.place}*/}
+                        <a onClick ={() =>this.scrollToElement(place.place)}>{place.place}</a>
                       </div>
                     </div>
                     <div className="schedule-content">{place.time}</div>
