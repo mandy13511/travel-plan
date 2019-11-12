@@ -16,6 +16,11 @@ export default class Navbar extends Component {
     this.setState({ width: window.innerWidth });
   }
 
+  handleClick() {
+    let element = document.getElementById("loadFile");
+    element.click();
+  }
+
   showModal = () => {
     this.setState({ showModal: true });
   }
@@ -38,7 +43,10 @@ export default class Navbar extends Component {
       /* desktop view */
       return (
         <div>
-          <div className = "navbar-btn" onClick = {this.props.update}><FiFolder/></div>
+          <div className = "navbar-btn" onClick = {this.handleClick}>
+            <input id = "loadFile" type="file" onChange = {this.loadTravelPlan} style={{display: "none"}}/>
+            <FiFolder/>
+          </div>
           <div className = "navbar-btn" onClick = {this.showModal}><FiCalendar/></div>
           <div className = "navbar-btn active"><FiEdit/></div>
           <div className = "navbar-btn" onClick = {this.saveTravelPlan}><FiSave/></div>
@@ -48,9 +56,18 @@ export default class Navbar extends Component {
     }
   }
 
+  loadTravelPlan = (event) => {
+    var f = event.target.files[0];
+    var reader = new FileReader();
+    reader.onload = (event) => {
+      this.props.update(event.target.result);
+    }
+    reader.readAsText(f);
+  }
+
   saveTravelPlan = () => {
     /* create an element <a> and save the text file by setting download attributes */
-    var element = document.createElement('a');
+    let element = document.createElement('a');
     alert(this.props.travel);
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(this.props.travelPlan)));
     element.setAttribute('download', "travelPlan.txt");

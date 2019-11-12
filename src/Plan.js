@@ -139,9 +139,9 @@ export default class Plan extends Component {
     }
   }
 
-  updateData = () => {
-    alert("update");
-    //this.setState({travelPlan: pData});
+  updateData = (pData) => {
+    pData = JSON.parse(pData);
+    this.setState({travelPlan: pData});
   }
 
   render() {
