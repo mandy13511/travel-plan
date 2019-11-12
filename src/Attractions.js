@@ -15,6 +15,7 @@ export default class Attractions extends Component {
     return (
       <div id={this.props.travel.place} className="panel">
         {/* Image */}
+        { (this.props.travel.img.length > 0) && (
         <div className="panel-container row">
           <div>
             <img className="img img-l" src={this.props.travel.img[0]} alt="" />
@@ -27,6 +28,7 @@ export default class Attractions extends Component {
             })}
           </div>
         </div>
+        )}
         {/* Information */}
         <div className="panel-container">
           <div className="header text-l">{this.props.travel.place}</div>
