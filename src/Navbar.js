@@ -49,12 +49,20 @@ export default class Navbar extends Component {
                     accept = ".txt"
                     onChange = {this.loadTravelPlan}
                     style={{display: "none"}}/>
-            <FiFolder/>
+            <span tooltip="Load Plan From Local Document" flow="right"><FiFolder/></span>
           </div>
-          <div className = {"navbar-btn " + (this.props.page === "calendar" ? "active" : "")} onClick = {() => this.props.setPage("calendar")}><FiCalendar/></div>
-          <div className = {"navbar-btn " + (this.props.page === "edit" ? "active" : "")} onClick = {() => this.props.setPage("edit")}><FiEdit/></div>
-          <div className = "navbar-btn" onClick = {this.saveTravelPlan}><FiSave/></div>
-          <div className = "navbar-btn"><FiDownload/></div>
+          <div className = {"navbar-btn " + (this.props.page === "calendar" ? "active" : "")} onClick = {() => this.props.setPage("calendar")}>
+            <span tooltip="Calendar Mode" flow="right"><FiCalendar/></span>
+          </div>
+          <div className = {"navbar-btn " + (this.props.page === "edit" ? "active" : "")} onClick = {() => this.props.setPage("edit")}>
+            <span tooltip="Add New Place" flow="right"><FiEdit/></span>
+          </div>
+          <div className = "navbar-btn" onClick = {this.saveTravelPlan}>
+            <span tooltip="Save Plan As Text File" flow="right"><FiSave/></span>
+          </div>
+          <div className = "navbar-btn">
+            <span tooltip="Download Plan As PDF" flow="right"><FiDownload/></span>
+          </div>
         </div>
       );
     }
