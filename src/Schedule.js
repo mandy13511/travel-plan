@@ -39,7 +39,8 @@ export default class Schedule extends Component {
                       <div className="dot" />
                       <div className="schedule-title">
                         {/*href={"#" + place.place}*/}
-                        <a onClick ={() =>this.scrollToElement(place.place)}>{place.place}</a>
+                        {/*onClick ={() =>this.scrollToElement(place.place)}*/}
+                        <a href={"#" + place.place}>{place.place}</a>
                       </div>
                     </div>
                     <div className="schedule-content">{place.time}</div>

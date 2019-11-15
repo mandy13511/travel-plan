@@ -13,7 +13,8 @@ export default class Attractions extends Component {
   render() {
     const address = "https://maps.google.com/?q=" + this.props.travel.address;
     return (
-      <div id={this.props.travel.place} className="panel">
+      <div id={this.props.travel.place} className = "scrollpy" style = {{padding: "0.2rem"}}>
+        <div  className="panel">
         {/* Image */}
         { (this.props.travel.img.length > 0) && (
           <div className="panel-container row">
@@ -80,6 +81,7 @@ export default class Attractions extends Component {
           <p className="panel-note-container text-m">
             {this.props.travel.note}
           </p>
+        </div>
         </div>
       </div>
     );
