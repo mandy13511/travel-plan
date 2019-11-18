@@ -6,6 +6,7 @@ $font-color: #707070;
 $font-color-1: #545871;
 $font-color-2: #9597A6;
 $font-color-3: #B8817D;
+$font-color-4: #EBD0CE;
 $shadow-color: #bbbbbb;
 $hover-font-color: white;
 $hover-bg-color: black;
@@ -207,6 +208,15 @@ button{
   flex-direction: column;
   margin-top: 2rem;
   border-left: solid 0.1rem $font-color-2;
+  a{
+    color: $font-color-2;
+  }
+  .active{
+    font-weight: 900;
+    a{
+        color: $font-color-1;
+    }
+  }
 }
 
 .schedule-day{
@@ -226,7 +236,6 @@ button{
 .schedule-title{
   display: flex;
   align-items: center;
-  color: $font-color-2;
   font-size: 1rem;
   cursor: pointer;
   &:hover{

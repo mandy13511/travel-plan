@@ -34,7 +34,7 @@ export default class Schedule extends Component {
               {/*<div className="schedule-day">Day {index + 1}</div>*/}
               {day.map(place => {
                 return (
-                  <div className="schedule-item">
+                  <div className={(this.props.currentSection == place.place ? "active" : "")}>
                     <div className=" schedule-header">
                       <div className="dot" />
                       <div className="schedule-title">
