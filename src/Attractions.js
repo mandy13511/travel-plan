@@ -13,7 +13,7 @@ export default class Attractions extends Component {
   render() {
     const address = "https://maps.google.com/?q=" + this.props.travel.address;
     return (
-      <div  id={this.props.travel.place} style = {{padding: "0.2rem"}}>
+      <div id={this.props.travel.place} style = {{padding: "0.2rem"}}>
         <div  className="panel">
         {/* Image */}
         { (this.props.travel.img.length > 0) && (

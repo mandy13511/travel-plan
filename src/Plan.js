@@ -122,7 +122,11 @@ export default class Plan extends Component {
   constructor(props) {
     super(props);
     this.myRef = React.createRef()
-    this.state = {travelPlan: travelPlan, page: "edit", currentSection: travelPlan[0][0].place};
+    this.state = {
+      travelPlan: travelPlan,
+      page: "calendar",
+      currentSection: travelPlan[0][0].place
+    };
   }
 
   componentWillMount() {
@@ -136,7 +140,9 @@ export default class Plan extends Component {
     else{
       return(
         <div className="side">
-          <Schedule travel={this.state.travelPlan} currentSection = {this.state.currentSection}/>
+          <Schedule travel={this.state.travelPlan}
+                    currentSection = {this.state.currentSection}
+                    setCurrentSection = {this.setCurrentSection}/>
         </div>);
     }
   }
@@ -150,32 +156,22 @@ export default class Plan extends Component {
     this.setState({page: pPage});
   }
 
+  setCurrentSection = (pPlace) => {
+    //this.setState({currentSection: pPlace});
+  }
+
   onScroll = () => {
-    console.log("scroll");
     var scrollTop = this.myRef.current.scrollTop;
     var rootElement = document.getElementById("scrollspy");
     var elems = rootElement.childNodes;
-    console.log(elems.lengh);
     elems.forEach((element) => {
       let elemTop = element.offsetTop;
       let elemBottom = elemTop + element.offsetHeight;
       if (scrollTop >= elemTop - 100 && scrollTop <= elemBottom){
         let id = element.id;
-        console.log(id);
         this.setState({currentSection: id});
       }
     })
-
-    /*var elems = $('.spyscroll');
-    elems.each(function(index){
-      var elemTop 	= $(this).offset().top;
-      var elemBottom 	= elemTop + $(this).height();
-      if(currentTop >= elemTop-100 && currentTop <= elemBottom){
-        var id 		= $(this).attr('id');
-        var navElem = $('a[href="#' + id+ '"]');
-        navElem.parent().parent().parent().addClass('active').siblings().removeClass( 'active' );
-      }
-    })*/
   }
 
   render() {
@@ -187,12 +183,12 @@ export default class Plan extends Component {
                 page = {this.state.page}/>
         {this.state.page === "calendar" && this.showSchedule()}
         {this.state.page === "calendar" && (
-          <div  id = "scrollspy" className = "content"
+          <div  id = "scrollspy" className = "content space"
                 ref = {this.myRef}
                 onScroll = {this.onScroll}>
             {this.state.travelPlan.map(element => {
-              return element.map(item => {
-                return <Attractions travel = {item} />;
+              return element.map((item,index) => {
+                return <Attractions travel = {item}/>;
               });
             })}
           {/*<button className = "scroll"><IoIosAdd style = {{ width: '2rem', height: '2rem' }}/></button>*/}

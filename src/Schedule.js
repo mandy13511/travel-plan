@@ -31,16 +31,16 @@ export default class Schedule extends Component {
         {this.props.travel.map((day, index) => {
           return (
             <div>
-              {/*<div className="schedule-day">Day {index + 1}</div>*/}
+              <div className="schedule-day">Day {index + 1}</div>
               {day.map(place => {
                 return (
                   <div className={(this.props.currentSection == place.place ? "active" : "")}>
-                    <div className=" schedule-header">
+                    <div className=" schedule-container">
                       <div className="dot" />
                       <div className="schedule-title">
                         {/*href={"#" + place.place}*/}
                         {/*onClick ={() =>this.scrollToElement(place.place)}*/}
-                        <a href={"#" + place.place}>{place.place}</a>
+                        <a href={"#" + place.place} onClick = {() => this.props.setCurrentSection(place.place)}>{place.place}</a>
                       </div>
                     </div>
                     <div className="schedule-content">{place.time}</div>
