@@ -224,12 +224,16 @@ a{
 }
 
 .schedule-day{
-  margin-bottom: 3rem;
+  /*margin-bottom: 3rem;
   padding: 0.2rem;
   background-color: $font-color-2;
   border-radius: 0px 5px 5px 0px;
   color: white;
-  text-align: center;
+  text-align: center;*/
+  display: flex;
+  flex-direction: row;
+  margin-left: -0.7rem;
+  margin-bottom: 1.5rem;
 }
 
 .schedule-container{
@@ -258,6 +262,11 @@ a{
   border-radius:50%;
   /*border: solid $font-color;*/
   background: $font-color-2;
+
+  &.bold{
+    background-color: white;
+    border: solid 3px $font-color-1;
+  }
 }
 
 .schedule-content{
