@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { FiMinus, FiPlus } from "react-icons/fi";
 
 import "./styles.scss";
 import "./mbStyles.scss";
@@ -31,7 +32,9 @@ export default class Schedule extends Component {
             <div>
               {/*<div className="schedule-day">Day {index + 1}</div>*/}
               <div className = "schedule-day">
-                <div className = "dot bold"/>
+                <div className = "dot bold">
+                {(this.state.expandList[index] == true ? <FiMinus/> : <FiPlus/>)}                
+                </div>
                 <div className = "schedule-title" onClick = {() => this.toggleDay(index)}>
                   Day {index + 1}
                 </div>

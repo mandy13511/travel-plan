@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { IoMdLink, IoIosPin, IoMdCash, IoIosCall } from "react-icons/io";
 import { FiMapPin, FiPhoneCall, FiLink2, FiCreditCard } from "react-icons/fi";
 
 import "./styles.scss";
